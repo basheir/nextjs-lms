@@ -23,19 +23,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    suppressHydrationWarning >
+      suppressHydrationWarning >
       <body className="min-h-full flex flex-col">
-        <h1 className="text-red-500">Here navigation section</h1>
+        {/* <h1 className="text-red-500">Here navigation section</h1> */}
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        
-        </body>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+
+      </body>
     </html>
   );
 }
