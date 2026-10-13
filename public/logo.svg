@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f7971e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd200;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" rx="80" fill="url(#bgGrad)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="320" cy="80" r="60" fill="#3a7bd5" opacity="0.08"/>
+  <circle cx="80" cy="320" r="80" fill="#00d2ff" opacity="0.06"/>
+  <circle cx="350" cy="340" r="40" fill="#f7971e" opacity="0.06"/>
+
+  <!-- Book / Knowledge Base -->
+  <g filter="url(#shadow)" transform="translate(200,195)">
+    <!-- Open book shape -->
+    <path d="M-80,-50 Q-80,-65 -65,-65 L0,-50 L0,60 Q-10,50 -65,50 Q-80,50 -80,35 Z"
+          fill="url(#bookGrad)" opacity="0.95"/>
+    <path d="M80,-50 Q80,-65 65,-65 L0,-50 L0,60 Q10,50 65,50 Q80,50 80,35 Z"
+          fill="url(#bookGrad)" opacity="0.75"/>
+
+    <!-- Book spine -->
+    <line x1="0" y1="-50" x2="0" y2="60" stroke="#1a1a2e" stroke-width="2" opacity="0.3"/>
+
+    <!-- Pages lines (left) -->
+    <line x1="-70" y1="-30" x2="-10" y2="-20" stroke="#fff" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+    <line x1="-70" y1="-15" x2="-10" y2="-5" stroke="#fff" stroke-width="2" opacity="0.25" stroke-linecap="round"/>
+    <line x1="-70" y1="0" x2="-10" y2="10" stroke="#fff" stroke-width="2" opacity="0.2" stroke-linecap="round"/>
+    <line x1="-70" y1="15" x2="-10" y2="25" stroke="#fff" stroke-width="2" opacity="0.15" stroke-linecap="round"/>
+
+    <!-- Pages lines (right) -->
+    <line x1="70" y1="-30" x2="10" y2="-20" stroke="#fff" stroke-width="2" opacity="0.25" stroke-linecap="round"/>
+    <line x1="70" y1="-15" x2="10" y2="-5" stroke="#fff" stroke-width="2" opacity="0.2" stroke-linecap="round"/>
+    <line x1="70" y1="0" x2="10" y2="10" stroke="#fff" stroke-width="2" opacity="0.15" stroke-linecap="round"/>
+  </g>
+
+  <!-- Graduation cap on top -->
+  <g transform="translate(200,110)" filter="url(#glow)">
+    <path d="M-60,-10 L0,-45 L60,-10 L0,25 Z" fill="url(#accentGrad)"/>
+    <path d="M-60,-10 L0,25 L60,-10" fill="none" stroke="#1a1a2e" stroke-width="1.5" opacity="0.3"/>
+    <!-- Cap base -->
+    <path d="M-45,0 L-45,20 Q0,45 45,20 L45,0" fill="url(#accentGrad)" opacity="0.85"/>
+    <!-- Tassel -->
+    <line x1="60" y1="-10" x2="70" y2="15" stroke="#f7971e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="70" cy="18" r="4" fill="#f7971e"/>
+  </g>
+
+  <!-- Learning nodes / network dots -->
+  <g opacity="0.6">
+    <circle cx="130" cy="270" r="5" fill="#00d2ff">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="300" r="4" fill="#3a7bd5">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="300" r="4" fill="#00d2ff">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="270" cy="270" r="5" fill="#3a7bd5">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <line x1="130" y1="270" x2="160" y2="300" stroke="#00d2ff" stroke-width="1.5" opacity="0.4"/>
+    <line x1="240" y1="300" x2="270" y2="270" stroke="#3a7bd5" stroke-width="1.5" opacity="0.4"/>
+    <line x1="160" y1="300" x2="240" y2="300" stroke="#00d2ff" stroke-width="1" opacity="0.2"/>
+  </g>
+
+  <!-- App name text -->
+  <text x="200" y="365" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="28" font-weight="700" letter-spacing="6" fill="url(#bookGrad)" filter="url(#glow)">
+    LEARN
+  </text>
+  <text x="200" y="385" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif"
+        font-size="11" font-weight="400" letter-spacing="8" fill="#8899aa" opacity="0.8">
+    MANAGEMENT SYSTEM
+  </text>
+</svg>
